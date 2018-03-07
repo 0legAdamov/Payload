@@ -5,6 +5,7 @@
  ### Operators
 *  [Filtering](#filtering)
 	*  ignoreElements
+	* elementAt
 ***
 ### Filtering
 **ignoreElements**
@@ -19,7 +20,11 @@ subject.ignoreElements().subscribe { _ in
 	// print on .completed or .error
 }
 ```
+**elementAt**
+
+
+
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTQ5MDQ4MDFdfQ==
+eyJoaXN0b3J5IjpbMTY5MDUzMjkwNV19
 -->
