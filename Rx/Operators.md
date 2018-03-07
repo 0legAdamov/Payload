@@ -7,6 +7,7 @@
 	*  ignoreElements
 	* elementAt
 	* filter
+* [Skipping](#skipping)
 ***
 ## Filtering
 ### ignoreElements
@@ -38,5 +39,5 @@ Observable.of(1,2,3,4,5,6)
 ```
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUxMjE2OTA5XX0=
+eyJoaXN0b3J5IjpbLTEwODIwOTMxNDNdfQ==
 -->
