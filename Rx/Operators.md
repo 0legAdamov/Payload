@@ -24,11 +24,11 @@ subject.ignoreElements().subscribe { _ in
 ```swift
 let subject = PublishSubject<String>()
 subject.elementAt(2).subscribe(onNext: { string in 
-		// print on .completed or .error
+	// start from third element
 }).disposed(by: disposeBag)
 ```
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyNzk0MDIyOF19
+eyJoaXN0b3J5IjpbLTExNDgyOTc5MjFdfQ==
 -->
