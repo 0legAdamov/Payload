@@ -6,6 +6,7 @@
 *  [Filtering](#filtering)
 	*  ignoreElements
 	* elementAt
+	* filter
 ***
 ## Filtering
 ### ignoreElements
@@ -26,8 +27,9 @@ subject.elementAt(2).subscribe(onNext: { string in
 	// start from third element
 }).disposed(by: disposeBag)
 ```
+### filter
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzYzNjYyOTJdfQ==
+eyJoaXN0b3J5IjpbMjAxODE5NzI3NV19
 -->
