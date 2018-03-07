@@ -18,7 +18,7 @@ let disposeBag = DisposeBag()
 
 subject.ignoreElements().subscribe { _ in 
 	// print on .completed or .error
-}.d
+}.disposed
 ```
 **elementAt(_:)**
 
@@ -26,5 +26,5 @@ subject.ignoreElements().subscribe { _ in
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxOTM1MTU0NV19
+eyJoaXN0b3J5IjpbMTg5MjQ2NTAxMF19
 -->
