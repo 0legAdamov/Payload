@@ -23,12 +23,14 @@ subject.ignoreElements().subscribe { _ in
 Принимает события начиная с индекса
 ```swift
 let subject = PublishSubject<String>()
-subject.elementAt(2).subscribe(onNext: { _ in 
+subject
+	.elementAt(2)
+	.subscribe(onNext: { string in 
 	// print on .completed or .error
-}.disposed(by: disposeBag)
+}).disposed(by: disposeBag)
 ```
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzYyMTEwNTc5XX0=
+eyJoaXN0b3J5IjpbLTM3MjU2ODYwXX0=
 -->
