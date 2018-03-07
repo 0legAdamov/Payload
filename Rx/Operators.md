@@ -30,9 +30,12 @@ subject.elementAt(2).subscribe(onNext: { string in
 ### filter
 Фильтрация каждого элемента
 ```swift
-Observable.of(1,2,3,4,5).filter { $0 % 2 }
+Observable.of(1,2,3,4,5)
+	.filter { $0 % 2 == 0 }
+	.subscribe(onNext: { element in 
+	}).disposed(by: disposeBag)
 ```
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDQ0ODMxNTVdfQ==
+eyJoaXN0b3J5IjpbLTE4NjQ5MjA4ODNdfQ==
 -->
