@@ -18,13 +18,13 @@ let disposeBag = DisposeBag()
 
 subject.ignoreElements().subscribe { _ in 
 	// print on .completed or .error
-}
+}.d
 ```
 **elementAt(_:)**
 
-Пр
+Принимает события начиная с идекса
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0MDE0MzI0OF19
+eyJoaXN0b3J5IjpbLTkxOTM1MTU0NV19
 -->
