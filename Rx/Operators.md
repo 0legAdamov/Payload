@@ -20,11 +20,11 @@ subject.ignoreElements().subscribe { _ in
 	// print on .completed or .error
 }
 ```
-**elementAt**
+**elementAt(_:)**
 
-
+Пр
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5MDUzMjkwNV19
+eyJoaXN0b3J5IjpbMTM0MDE0MzI0OF19
 -->
