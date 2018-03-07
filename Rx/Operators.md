@@ -7,7 +7,7 @@
 	*  ignoreElements
 	* elementAt
 ***
-### Filtering
+## Filtering
 **ignoreElements**
 
 Игнорирует `.next`  и пропускает только `.completed` и 
@@ -18,7 +18,7 @@ subject.ignoreElements().subscribe { _ in
 	// print on .completed or .error
 }.disposed(by: disposeBag)
 ```
-#### elementAt(_:)
+### elementAt(_:)
 Принимает события начиная с индекса
 ```swift
 let subject = PublishSubject<String>()
@@ -29,5 +29,5 @@ subject.elementAt(2).subscribe(onNext: { string in
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDE0Mzc0NzVdfQ==
+eyJoaXN0b3J5IjpbNjU0MTE2MzFdfQ==
 -->
