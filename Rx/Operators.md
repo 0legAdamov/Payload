@@ -28,8 +28,8 @@ subject.elementAt(2).subscribe(onNext: { string in
 }).disposed(by: disposeBag)
 ```
 ### filter
-
+Фи
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxODE5NzI3NV19
+eyJoaXN0b3J5IjpbLTY3OTc3OTkyMV19
 -->
