@@ -22,9 +22,9 @@ subject.ignoreElements().subscribe { _ in
 
 Принимает события начиная с индекса
 ```swift
-
+````
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzMTkzMDM5NF19
+eyJoaXN0b3J5IjpbMTAwMzkwMjQ2XX0=
 -->
