@@ -3,12 +3,13 @@
 [/]:# (stackedit.io)
 
  ### Operators
-* [Filtering](#filtering)
+*  [Filtering](#filtering)
 	*  ignoreElements
 ***
-#### Filtering
+### Filtering
 **ignoreElements**
-Игнорирует `.тext`  и пропускает только `.completed` и 
+
+Игнорирует `.next`  и пропускает только `.completed` и 
 `.error`
 ```swift
 let subject = PublishSubject<String>()
@@ -20,5 +21,5 @@ subject.ignoreElements().subscribe { _ in
 ```
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MzI3MTUyXX0=
+eyJoaXN0b3J5IjpbLTEzNTQ5MDQ4MDFdfQ==
 -->
