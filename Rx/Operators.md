@@ -8,7 +8,7 @@
 	* elementAt
 ***
 ## Filtering
-**ignoreElements**
+### ignoreElements
 
 Игнорирует `.next`  и пропускает только `.completed` и 
 `.error`
@@ -29,5 +29,5 @@ subject.elementAt(2).subscribe(onNext: { string in
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU0MTE2MzFdfQ==
+eyJoaXN0b3J5IjpbLTExNzYzNjYyOTJdfQ==
 -->
