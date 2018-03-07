@@ -14,17 +14,17 @@
 `.error`
 ```swift
 let subject = PublishSubject<String>()
-let disposeBag = DisposeBag()
-
 subject.ignoreElements().subscribe { _ in 
 	// print on .completed or .error
-}.disposed
+}.disposed(by: disposeBag)
 ```
 **elementAt(_:)**
 
-Принимает события начиная с идекса
+Принимает события начиная с индекса
+```swift
+
 
 ##### [Operators](#operators)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MjQ2NTAxMF19
+eyJoaXN0b3J5IjpbLTYzMTkzMDM5NF19
 -->
