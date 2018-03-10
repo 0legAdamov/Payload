@@ -5,12 +5,13 @@
  ### Operators
 *  [Filtering](#filtering)
 	* ignoreElements
-	* elementAt
+	* [elementAt](#elementat)
 	* filter
 * [Skipping](#skipping)
 	* skip
 	* skipWhile
 	* skipUntil
+* [Taking](#taking)
 ***
 ## Filtering
 ### ignoreElements
@@ -78,3 +79,5 @@ subject.onNext("A")
 triegger.onNext("X")
 subject.onNext("B")
 ```
+##### [Operators](#operators)
+## Taking
