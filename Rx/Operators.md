@@ -20,7 +20,7 @@ subject.ignoreElements().subscribe { _ in
 	// print on .completed or .error
 }.disposed(by: disposeBag)
 ```
-## elementAt
+### elementAt
 Принимает события начиная с индекса
 ```swift
 let subject = PublishSubject<String>()
@@ -43,5 +43,5 @@ Observable.of(1,2,3,4,5,6)
 eyJoaXN0b3J5IjpbMTY5NTA1NzE5Nl19
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI1MjI4NjMyXX0=
+eyJoaXN0b3J5IjpbNjY0MDUzNjA1XX0=
 -->
