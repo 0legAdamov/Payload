@@ -12,6 +12,8 @@
 	* [skipWhile](#skipwhile)
 	* [skipUntil](#skipuntil)
 * [Taking](#taking)
+	* [take](#take)
+	* [takeWhile](#takeWhile)
 ***
 ## Filtering
 ### ignoreElements
@@ -44,7 +46,7 @@ Observable.of(1,2,3,4,5,6)
 ##### [Operators](#operators)
 ## Skipping
 ### skip
-Пропускает `n`, начиная с первого элемента
+Пропускает `n` элементов, начиная с первого элемента
 ```swift
 Observable.of("A", "B", "C", "D", "E", "F")
 	.skip(3)
@@ -81,3 +83,13 @@ subject.onNext("B")
 ```
 ##### [Operators](#operators)
 ## Taking
+### take
+Берет первых `n` элементов
+```swift
+Observable.of("A", "B", "C", "D", "E", "F")
+	.take(3)
+	.subscribe(onNext: {
+		// print "A", "B", "C" 
+	}).disposed(by: disposeBag)
+```
+### takeWhile
