@@ -5,7 +5,7 @@
  ### Operators
 *  [Filtering](#filtering)
 	*  ignoreElements
-	* elementAt
+	* [elementAt](#elementAt)
 	* filter
 * [Skipping](#skipping)
 ***
@@ -20,7 +20,7 @@ subject.ignoreElements().subscribe { _ in
 	// print on .completed or .error
 }.disposed(by: disposeBag)
 ```
-### elementAt(_:)
+### elementAt
 Принимает события начиная с индекса
 ```swift
 let subject = PublishSubject<String>()
