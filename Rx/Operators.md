@@ -9,6 +9,7 @@
 	* filter
 * [Skipping](#skipping)
 	* skip
+	* skipWhile
 ***
 ## Filtering
 ### ignoreElements
@@ -41,6 +42,20 @@ Observable.of(1,2,3,4,5,6)
 ##### [Operators](#operators)
 ## Skipping
 ### skip
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzg4NjAzNTddfQ==
--->
+Пропускает `n`, начиная с первого элемента
+```swift
+Observable.of("A", "B", "C", "D", "E", "F")
+	.skip(3)
+	.subscribe(onNext: { element in 
+		// "D", "E", F"
+	}).disposed(by: disposeBag)
+```
+### skipWhile
+Пропускает (отбрасывает) новые элементы пока условие в предикате `skipWhile` равно `false`, как только условие станет `true` - все послудующие элементы будут использоваться далее.
+```swift
+Observable.of(2, 4, 5, 6, 7, 8)
+	.skipWhile { $0 % 2 == 1 }
+	.subscribe(onNext: { element in 
+		// 5, 6, 7, 8
+	}).disposed(by: disposeBag)
+```
