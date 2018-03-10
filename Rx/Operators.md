@@ -4,13 +4,13 @@
 
  ### Operators
 *  [Filtering](#filtering)
-	* ignoreElements
+	* [ignoreElements](#ignoreelements)
 	* [elementAt](#elementat)
-	* filter
+	* [filter](#filter)
 * [Skipping](#skipping)
-	* skip
-	* skipWhile
-	* skipUntil
+	* [skip](#skip)
+	* [skipWhile](#skipwhile)
+	* [skipUntil](#skipuntil)
 * [Taking](#taking)
 ***
 ## Filtering
