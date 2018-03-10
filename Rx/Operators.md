@@ -10,6 +10,7 @@
 * [Skipping](#skipping)
 	* skip
 	* skipWhile
+	* skipUntil
 ***
 ## Filtering
 ### ignoreElements
@@ -58,4 +59,22 @@ Observable.of(2, 4, 5, 6, 7, 8)
 	.subscribe(onNext: { element in 
 		// 5, 6, 7, 8
 	}).disposed(by: disposeBag)
+```
+### skipUntil
+Пропускает (отбрасывает) элементы исходной последовательности пока последовательность в тригере не отправит `.onNext`. После этого все значени от исходной будут использоваться.
+```swift
+let subject = PublishSubject<String>()
+let trigger = PublishSubject<String>()
+
+subject
+	.skipUntil(trigger)
+	.subscribe(onNext: {
+		// print only "B"
+	}).disposed(by: disposeBag)
+}
+
+
+subject.onNext("A")
+triegger.onNext("X")
+subject.onNext("B")
 ```
