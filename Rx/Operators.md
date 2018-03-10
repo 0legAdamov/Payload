@@ -13,7 +13,7 @@
 	* [skipUntil](#skipuntil)
 * [Taking](#taking)
 	* [take](#take)
-	* [takeWhile](#takeWhile)
+	* [takeWhile](#takewhile)
 ***
 ## Filtering
 ### ignoreElements
