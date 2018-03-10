@@ -4,8 +4,8 @@
 
  ### Operators
 *  [Filtering](#filtering)
-	*  ignoreElements
-	* [elementAt](#elementAt)
+	* ignoreElements
+	* elementAt
 	* filter
 * [Skipping](#skipping)
 ***
@@ -43,5 +43,5 @@ Observable.of(1,2,3,4,5,6)
 eyJoaXN0b3J5IjpbMTY5NTA1NzE5Nl19
 -->
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY0MDUzNjA1XX0=
+eyJoaXN0b3J5IjpbOTExNzA1NjI0XX0=
 -->
