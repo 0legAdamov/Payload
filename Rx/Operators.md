@@ -2,8 +2,9 @@
 
 [/]:# (stackedit.io)
 
- ### Operators
-*  [Filtering](#filtering)
+## Operators
+### Filterting 
+*  [Ignoring](#ignoring)
 	* [ignoreElements](#ignoreelements)
 	* [elementAt](#elementat)
 	* [filter](#filter)
@@ -18,7 +19,7 @@
 * [Distinct](#distinct)
 	* [distinctUntilChanged](#distinctuntilchanged)
 ***
-## Filtering
+## Ignoring
 ### ignoreElements
 
 Игнорирует `.next`  и пропускает только `.completed` и 
@@ -138,3 +139,17 @@ subject.onNext(3)
 ##### [Operators](#operators)
 ## Distinct
 ### distinctUntilChanged
+Прорускает дальше только отличные от предыдущего значения
+```swift
+Observable.of(1, 2, 2, 1)
+	.distinctUntilChanged()
+	.subscribe(onNext: { item in
+		// 1, 2, 1
+	}).disposed(by: disposeBag)
+```
+`item` должен быть `Equatable` или можно сделать свое сравнение
+```swift
+.distinctUntilChanged { a, b in
+	a.value == b.value
+}
+```
