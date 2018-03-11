@@ -4,7 +4,7 @@
 
 ## Operators
 ### Filterting 
-*  [Ignoring](#ignoring)
+* [Ignoring](#ignoring)
 	* [ignoreElements](#ignoreelements)
 	* [elementAt](#elementat)
 	* [filter](#filter)
@@ -18,6 +18,9 @@
 	* [takeUntil](#takeuntil)
 * [Distinct](#distinct)
 	* [distinctUntilChanged](#distinctuntilchanged)
+### Transforming
+* [toArray](#toarray)
+* [map](#map)
 ***
 ## Ignoring
 ### ignoreElements
@@ -152,4 +155,28 @@ Observable.of(1, 2, 2, 1)
 .distinctUntilChanged { a, b in
 	a.value == b.value
 }
+```
+## Transforming
+### toArray
+Собирает все элементы и отдает их массив когда `.onCompleted`
+```swift
+let subject = BehaviorSubject(value: 1)
+subject
+	.toArray()
+	.subscribe(onNext: { item in
+		// [1, 2, 3]
+	}).disposed(by: disposeBag)
+	
+subject.onNext(2)
+subject.onNext(3)
+subject.onCompleted()
+```
+### map
+Трансформирует каждый элемент
+```swift
+Observable.of(1, 2, 3)
+	.map { "item \($0)" }
+	.subscribe(onNext: { item in
+		// "item 1", "item 2", "item 3"
+	}).disposed(by: disposeBag)
 ```
