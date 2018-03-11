@@ -14,6 +14,7 @@
 * [Taking](#taking)
 	* [take](#take)
 	* [takeWhile](#takewhile)
+	* [takeUntil](#takeuntil)
 ***
 ## Filtering
 ### ignoreElements
@@ -93,3 +94,25 @@ Observable.of("A", "B", "C", "D", "E", "F")
 	}).disposed(by: disposeBag)
 ```
 ### takeWhile
+Берет элементы пока они удовлетворяют условию `takeWhile`. Как только появляется элемент не удовлетворяющий условию, все последжующие перестают проходить дальше.
+```swift
+Observable.of(1, 2, 3, 4)
+        .takeWhile { index in
+            return index < 3
+        }
+        .subscribe(onNext: { item in
+            print("item \(item)")
+        }).disposed(by: disposeBag)
+```
+Можно добавить `enumerated()` для получения не только индекса, но и элемента
+```swift
+...
+Observable.of(1, 2, 3, 4)
+	.enumerated()
+	.takeWhile { index, item in
+	    return item % 2 == 0 && index < 3
+	}
+	.map { $0.element }
+...
+```
+### takeUntil
