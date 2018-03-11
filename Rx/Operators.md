@@ -15,6 +15,8 @@
 	* [take](#take)
 	* [takeWhile](#takewhile)
 	* [takeUntil](#takeuntil)
+* [Distinct](#distinct)
+	* [distinctUntilChanged](#distinctuntilchanged)
 ***
 ## Filtering
 ### ignoreElements
@@ -116,3 +118,23 @@ Observable.of(1, 2, 3, 4)
 ...
 ```
 ### takeUntil
+Берет элементы исходной последовательности пока последовательность в тригере не отправит `.onNext`. После этого все значени от исходной не будут приниматься.
+```swift
+let subject = PublishSubject<Int>()
+let trigger = PublishSubject<String>()
+    
+subject
+	.takeUntil(trigger)
+	.subscribe(onNext: { item in
+		// 1, 2
+	}).disposed(by: disposeBag)
+
+subject.onNext(1)
+subject.onNext(2)
+
+trigger.onNext("X")
+subject.onNext(3)
+```
+##### [Operators](#operators)
+## Distinct
+### distinctUntilChanged
