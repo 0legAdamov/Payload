@@ -101,7 +101,7 @@ Observable.of(1, 2, 3, 4)
             return index < 3
         }
         .subscribe(onNext: { item in
-            print("item \(item)")
+            // 1, 2, 3
         }).disposed(by: disposeBag)
 ```
 Можно добавить `enumerated()` для получения не только индекса, но и элемента
