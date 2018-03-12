@@ -23,8 +23,7 @@
 * [map](#map)
 * [flatMap](#flatmap)
 * [flatMapLatest](#flatmaplatest)
-* [materialize](#materialize)
-* [materialize & dematerialize](#materialize-and-dematerialize)
+* [materialize & dematerialize](#materialize-&-dematerialize)
 ***
 ## Ignoring
 ### ignoreElements
@@ -236,4 +235,4 @@ student.onNext(s2)
 s1.score.onNext(90) // not emit
 s2.score.onNext(105)
 ```
-### materialize and dematerialize
+### materialize & dematerialize
