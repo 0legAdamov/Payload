@@ -21,6 +21,10 @@
 ### Transforming
 * [toArray](#toarray)
 * [map](#map)
+* [flatMap](#flatmap)
+* [flatMapLatest](#flatmaplatest)
+* [materialize](#materialize)
+* [materialize & dematerialize](#materialize&dematerialize)
 ***
 ## Ignoring
 ### ignoreElements
@@ -180,3 +184,56 @@ Observable.of(1, 2, 3)
 		// "item 1", "item 2", "item 3"
 	}).disposed(by: disposeBag)
 ```
+### flatMap
+Конвертирует элементы одной последовательности в другую последовательность и объединяет наблюдаемую последовательность
+```swift
+struct Student {
+	var score:  BehaviorSubject<Int>
+}
+   
+let s1 = Student(score: BehaviorSubject(value: 80))
+let s2 = Student(score: BehaviorSubject(value: 100))
+
+let student = PublishSubject<Student>()
+
+student
+	.flatMap { $0.score }
+	.subscribe(onNext: {
+		// 80, 85, 100, 90, 105
+	}).disposed(by: disposeBag)
+
+student.onNext(s1)
+s1.score.onNext(85)
+
+student.onNext(s2)
+
+s1.score.onNext(90)
+s2.score.onNext(105)
+```
+### flatMapLatest
+В отличии от `flatMap` автоматически переключается на последнюю наблюдаемую последовательность и отписывается от предыдущей
+```swift
+struct Student {
+	var score:  BehaviorSubject<Int>
+}
+
+let s1 = Student(score: BehaviorSubject(value: 80))
+let s2 = Student(score: BehaviorSubject(value: 100))
+
+let student = PublishSubject<Student>()
+
+student
+	.flatMapLatest { $0.score }
+	.subscribe(onNext: {
+		// 80, 85, 100, 105
+	}).disposed(by: disposeBag)
+
+student.onNext(s1)
+s1.score.onNext(85)
+
+student.onNext(s2)
+
+s1.score.onNext(90) // not emit
+s2.score.onNext(105)
+```
+### materialize & dematerialize
