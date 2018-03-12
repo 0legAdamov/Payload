@@ -1,8 +1,6 @@
 ## Chaining
 Поможет `flatMap`. Есть, например, два Observable
 ```swift
-let disposeBag = DisposeBag()
-    
 func observableString() -> Observable<String> {
 	return Observable.create { observable -> Disposable in
     	observable.onNext("12")
@@ -10,7 +8,8 @@ func observableString() -> Observable<String> {
         	return Disposables.create()
 		}
 }
-
+```
+```swift
 func observableInt(string: String) -> Observable<Int> {
 	return Observable.create { observable -> Disposable in
 		observable.onNext(Int(string)!)
@@ -18,4 +17,13 @@ func observableInt(string: String) -> Observable<Int> {
 		return Disposables.create()
 	}
 }
+```
+В итоге 
+```swift
+observableString()
+	.flatMap { string -> Observable<Int> in
+		return observableInt(string: string)
+	}.subscribe(onNext: { intVal in
+		print("val:", intVal)
+	}).disposed(by: disposeBag)
 ```
