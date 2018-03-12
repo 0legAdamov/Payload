@@ -24,7 +24,7 @@
 * [flatMap](#flatmap)
 * [flatMapLatest](#flatmaplatest)
 * [materialize](#materialize)
-* [materialize & dematerialize](#materializeanddematerialize)
+* [materialize & dematerialize](#materialize_and_dematerialize)
 ***
 ## Ignoring
 ### ignoreElements
