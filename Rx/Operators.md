@@ -3,7 +3,7 @@
 [/]:# (stackedit.io)
 
 ## Operators
-### [Ignoring](#ignoring)
+### [Ignoring ](#ignoring)
 * [ignoreElements](#ignoreelements)
 * [elementAt](#elementat)
 * [filter](#filter)
