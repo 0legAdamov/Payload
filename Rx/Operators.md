@@ -236,3 +236,32 @@ s1.score.onNext(90) // not emit
 s2.score.onNext(105)
 ```
 ### materialize and dematerialize
+`materialize` запаковывает испускаемые элементы в event, `dematerialize` распаковывает
+```swift
+struct Student {
+	var score:  BehaviorSubject<Int>
+}
+    
+let student = Student(score: BehaviorSubject(value: 80))
+let studentSubject = BehaviorSubject(value: student)
+
+studentSubject
+	.flatMapLatest {
+		$0.score.materialize()
+	}
+	.filter {
+		guard $0.error == nil else {
+			print($0.error!)
+			return false
+		}
+		return true
+	}
+	.dematerialize()
+	.subscribe(onNext: {
+		print($0)
+	}).disposed(by: disposeBag)
+
+student.score.onNext(85)
+student.score.onError(SomeError.anError)
+student.score.onNext(90)
+```
