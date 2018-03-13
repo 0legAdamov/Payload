@@ -3,7 +3,7 @@
 [/]:# (stackedit.io)
 
 ## Operators
-### Filterting 
+### Filterting
 * [Ignoring](#ignoring)
 	* [ignoreElements](#ignoreelements)
 	* [elementAt](#elementat)
@@ -24,7 +24,10 @@
 * [flatMap](#flatmap)
 * [flatMapLatest](#flatmaplatest)
 * [materialize & dematerialize](#materialize-and-dematerialize)
+### Combining
+* [startWith](#startwith)
 ***
+
 ## Ignoring
 ### ignoreElements
 
@@ -159,6 +162,7 @@ Observable.of(1, 2, 2, 1)
 	a.value == b.value
 }
 ```
+##### [Operators](#operators)
 ## Transforming
 ### toArray
 Собирает все элементы и отдает их массив когда `.onCompleted`
@@ -265,3 +269,6 @@ student.score.onNext(85)
 student.score.onError(SomeError.anError)
 student.score.onNext(90)
 ```
+##### [Operators](#operators)
+## Combining
+### startWith
