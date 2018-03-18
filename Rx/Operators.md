@@ -25,6 +25,8 @@
 * [materialize & dematerialize](#materialize-and-dematerialize)
 ### [Combining ](#combining)
 * [startWith](#startwith)
+* [concat](#concat)
+* [concatMap](#concatMap)
 ***
 
 ## Ignoring
@@ -279,3 +281,20 @@ numbers.subscribe(onNext: { value in
 	// 1, 2, 3, 4
 }).disposed(by: disposeBag)
 ```
+### concat
+`The Observable.concat(_:)` принимает массив последовательностей, подписывается на первую и принимает элементы пока не поступит `onComplete`, далее переходит к следующей. Если какая-либо внутренняя последовательность отправит `onError`, собранная последовательность тоже отправит `onError` и завершится.
+```swift
+let first = Observable.of(1, 2)
+let second = Observable.of(3, 4)
+
+let observable = Observable.concat([first, second])
+
+observable.subscribe(onNext: { value in
+	// 1, 2, 3, 4
+}).disposed(by: disposeBag)
+```
+Также `concat` можно применить к экземпляру
+```swift
+let observable = first.concat(second)
+```
+### concatMap
