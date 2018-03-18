@@ -26,7 +26,7 @@
 ### [Combining ](#combining)
 * [startWith](#startwith)
 * [concat](#concat)
-* [concatMap](#concatMap)
+* [concatMap](#concatmap)
 ***
 
 ## Ignoring
