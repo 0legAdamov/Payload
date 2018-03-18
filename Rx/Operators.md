@@ -271,3 +271,11 @@ student.score.onNext(90)
 ##### [Operators](#operators)
 ## Combining
 ### startWith
+Предоставляет начальное значение для последовательности
+```swift
+let numbers = Observable.of(2, 3, 4).startWith(1)
+
+numbers.subscribe(onNext: { value in
+	// 1, 2, 3, 4
+}).disposed(by: disposeBag)
+```
