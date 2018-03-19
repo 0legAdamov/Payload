@@ -27,6 +27,8 @@
 * [startWith](#startwith)
 * [concat](#concat)
 * [concatMap](#concatmap)
+* [merge](#merge)
+* [combineLatest](#combinelatest)
 ***
 
 ## Ignoring
@@ -298,3 +300,39 @@ observable.subscribe(onNext: { value in
 let observable = first.concat(second)
 ```
 ### concatMap
+Гарантирует, что каждая последовательность, созданная в замыкании `concatMap` будет слушаться до завершения, и только потом подпишется на следующую. Удобный способ для гарантии последовательности выполнения.
+```swift
+let sequences = [
+	"week":  Observable.of("monday", "friday"),
+	"month": Observable.of("august", "december")
+	]
+    
+let observable = Observable.of("week", "month")
+	.concatMap { country in 
+		sequences[country] ?? .empty()
+	}
+
+observable.subscribe(onNext: { string in
+	// monday, friday, august, december
+}).disposed(by: disposeBag)
+```
+### merge
+Подписывается на каждую принимаемую последовательность и выбрасывает новые элементы как только они поступят
+```swift
+let left = PublishSubject<String>()
+let right = PublishSubject<String>()
+    
+let source = Observable.of(left.asObserver(), right.asObserver())
+let observable = source
+	.merge()
+	.subscribe(onNext: { element in
+		print(element)
+	})
+    
+right.onNext("right 1")
+left.onNext("left 1")
+left.onNext("left 2")
+
+observable.dispose()
+```
+### combineLatest
