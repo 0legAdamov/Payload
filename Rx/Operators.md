@@ -29,6 +29,13 @@
 * [concatMap](#concatmap)
 * [merge](#merge)
 * [combineLatest](#combinelatest)
+* [zip](#zip)
+### [Trigers ](#trigers)
+* [withLatestFrom](#withlatestfrom)
+* [sample](#sample)
+### [Switches ](#switches)
+* [amb](#amb)
+* [switchLatest](#switchlatest)
 ***
 
 ## Ignoring
@@ -336,3 +343,52 @@ left.onNext("left 2")
 observable.dispose()
 ```
 ### combineLatest
+Подписывается на каждую принимаемую последовательность. Каждый раз, когда внутренняя последовательность выбрасывает значение - получаем последний элемент из каждой внутренней последовательности. Завершается только, когда завершится последняя внутренняя последовательность
+```swift
+let left = PublishSubject<String>()
+let right = PublishSubject<String>()
+    
+let observable = Observable
+	.combineLatest(left, right, resultSelector: { lastLeft, lastRight in
+		return "\(lastLeft) - \(lastRight)"
+	})
+	.subscribe(onNext: { nextVal in
+		// L2 - R1, L2 - R2, L3 - R2
+	})
+
+left.onNext("L1")
+left.onNext("L2")
+right.onNext("R1")
+right.onNext("R2")
+left.onNext("L3")
+```
+### zip
+Подписывается на предоставленные последовательности, ожидает пока каждая внутренняя выбросит новое значение и отдает новые значения внутренних посдеовательностей в замыкание. Если хотя бы одна из внутренних последовательностей завершится - завершится и вся последовательность. Для замыкания отдается первый новый элемент внутренней последовательности
+```swift
+let left = PublishSubject<String>()
+let right = PublishSubject<String>()
+    
+let observable = Observable
+	.zip(left, right, resultSelector: { e1, e2 in
+		return e1 + "-" + e2
+	})
+	.subscribe(onNext: { nextVal in
+		// L1-R1, L2-R2
+	})
+
+left.onNext("L1")
+left.onNext("L2")
+right.onNext("R1")
+right.onNext("R2")
+left.onNext("L3")
+```
+##### [Operators](#operators)
+## Trigers
+### withLatestFrom
+
+### sample
+##### [Operators](#operators)
+## Switches
+### amb
+### switchLatest
+##### [Operators](#operators)
