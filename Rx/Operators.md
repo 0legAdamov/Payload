@@ -385,8 +385,39 @@ left.onNext("L3")
 ##### [Operators](#operators)
 ## Trigers
 ### withLatestFrom
+Как только в `source` последовательность приходит новый элемент, берет из `input` последовательности последний элемент и испускает дальше его
+```swift
+let action = PublishSubject<Void>()
+let input = PublishSubject<String>()
+    
+let disposable = action
+	.withLatestFrom(input)
+	.subscribe(onNext: { text in
+		// two, two
+	})
 
+input.onNext("one")
+input.onNext("two")
+action.onNext(())
+action.onNext(())
+```
 ### sample
+Похож на `withLatestFrom`, но пропускает только новые значение, отличные от отправленных ранее
+```swift
+let action = PublishSubject<Void>()
+let input = PublishSubject<String>()
+
+let disposable = input
+	.sample(action)
+	.subscribe(onNext: { text in
+		// two
+	})
+
+input.onNext("one")
+input.onNext("two")
+action.onNext(())
+action.onNext(())
+```
 ##### [Operators](#operators)
 ## Switches
 ### amb
