@@ -421,5 +421,42 @@ action.onNext(())
 ##### [Operators](#operators)
 ## Switches
 ### amb
+Подписывается на две последовательности и ждет пока одна из них получит новый элемент, и отписывается от другого
+```swift
+let left = PublishSubject<String>()
+let right = PublishSubject<String>()
+
+let disposable = left.amb(right)
+	.subscribe(onNext: { newItem in
+		// L1, L2
+	})
+    
+left.onNext("L1")
+right.onNext("R1")
+right.onNext("R2")
+left.onNext("L2")
+```
 ### switchLatest
+```swift
+let left = PublishSubject<String>()
+let right = PublishSubject<String>()
+
+let source = PublishSubject<Observable<String>>()
+
+let observable = source.switchLatest()
+let disposable = observable.subscribe(onNext: { newItem in
+	// L2, R3
+})
+
+left.onNext("L1")
+right.onNext("R1")
+
+source.onNext(left)
+left.onNext("L2")
+right.onNext("R2")
+
+source.onNext(right)
+left.onNext("L3")
+right.onNext("R3")
+```
 ##### [Operators](#operators)
