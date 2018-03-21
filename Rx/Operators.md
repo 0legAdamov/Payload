@@ -437,6 +437,7 @@ right.onNext("R2")
 left.onNext("L2")
 ```
 ### switchLatest
+
 ```swift
 let left = PublishSubject<String>()
 let right = PublishSubject<String>()
