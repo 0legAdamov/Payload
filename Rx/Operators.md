@@ -36,6 +36,9 @@
 ### [Switches ](#switches)
 * [amb](#amb)
 * [switchLatest](#switchlatest)
+### [Combining within sequence ](#combining-within-sequence)
+* [reduce](#reduce)
+* [scan](#scan)
 ***
 
 ## Ignoring
@@ -460,4 +463,9 @@ source.onNext(right)
 left.onNext("L3")
 right.onNext("R3")
 ```
+##### [Operators](#operators)
+## Combining within sequence
+### reduce
+Аккумулирует элементы исходной последовательности
+### scan
 ##### [Operators](#operators)
