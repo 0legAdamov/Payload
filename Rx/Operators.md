@@ -466,6 +466,25 @@ right.onNext("R3")
 ##### [Operators](#operators)
 ## Combining within sequence
 ### reduce
-Аккумулирует элементы исходной последовательности
+ Аккумулирует элементы исходной последовательности и когда исходная последовательность завершается, испускает результат
+```swift
+let source = Observable.of(1, 3, 5, 7)
+let observable = source.reduce(0, accumulator: { summary, newValue in
+	return newValue + summary
+})
+observable.subscribe(onNext: { item in
+	// 16
+}).disposed(by: disposeBag)
+```
 ### scan
+Аккумулирует элементы, но в отличии от `reduce` не ждет завершения исходной последовательности, а испускает промежуточные результаты сложения
+```swift
+let source = Observable.of(1, 3, 5, 7)
+let observable = source.scan(0, accumulator: { summary, newValue in
+	return newValue + summary
+})
+observable.subscribe(onNext: { item in
+	// 1, 4, 9, 16
+}).disposed(by: disposeBag)
+```
 ##### [Operators](#operators)
