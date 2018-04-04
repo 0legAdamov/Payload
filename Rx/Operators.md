@@ -388,7 +388,7 @@ left.onNext("L3")
 ##### [Operators](#operators)
 ## Trigers
 ### withLatestFrom
-Как только в `source` последовательность приходит новый элемент, берет из `input` последовательности последний элемент и испускает дальше его
+Как только в `action` последовательность приходит новый элемент, берет из `input` последовательности последний элемент и испускает дальше его
 ```swift
 let action = PublishSubject<Void>()
 let input = PublishSubject<String>()
