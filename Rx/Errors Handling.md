@@ -1,29 +1,39 @@
-## Chaining
-Поможет `flatMap`. Есть, например, два Observable
-```swift
-func observableString() -> Observable<String> {
-	return Observable.create { observable -> Disposable in
-    	observable.onNext("12")
-    	observable.onCompleted()
-        	return Disposables.create()
+## Errors handling
+* [catchErrorJustReturn](#catcherrorjustreturn)
+* [catchError](#catcherror)
+---
+Тестовая функция, возвращающая ошибку:
+```
+enum NetworkError: Error {
+	case notReachable
+    case unknown
+}
+
+
+func testMethod(_ wrappedError: Error) -> Observable<String> {
+    return Observable.error(wrappedError)
+}
+```
+### catchErrorJustReturn
+Предоставляет значение, если приходит событие с ошибкой
+```
+testMethod(NetworkError.notReachable)
+	.catchErrorJustReturn("placeholder")
+	.subscribe(onNext: { string in
+		// placeholder
+	}).disposed(by: bag)
+```
+### catchError
+Может обработать ошибку и вернуть `Observable` с тем же типом или бросить ее дальше
+```
+testMethod(NetworkError.notReachable)
+	.catchError { error in
+		if case NetworkError.notReachable = error {
+			return Observable.just("handled error: no network")
 		}
-}
-```
-```swift
-func observableInt(string: String) -> Observable<Int> {
-	return Observable.create { observable -> Disposable in
-		observable.onNext(Int(string)!)
-		observable.onCompleted()
-		return Disposables.create()
+		throw error
 	}
-}
-```
-В итоге 
-```swift
-observableString()
-	.flatMap { string -> Observable<Int> in
-		return observableInt(string: string)
-	}.subscribe(onNext: { intVal in
-		print("val:", intVal)
-	}).disposed(by: disposeBag)
+	.subscribe(onNext: { string in
+		// no network
+	}).disposed(by: bag)
 ```
