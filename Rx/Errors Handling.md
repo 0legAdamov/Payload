@@ -4,7 +4,7 @@
 * [retry](#retry)
 ---
 Тестовая функция, возвращающая ошибку:
-```
+```swift
 enum NetworkError: Error {
     case notReachable
     case unknown
@@ -17,7 +17,7 @@ func testMethod(_ wrappedError: Error) -> Observable<String> {
 ```
 ### catchErrorJustReturn
 Предоставляет значение, если приходит событие с ошибкой
-```
+```swift
 testMethod(NetworkError.notReachable)
     .catchErrorJustReturn("placeholder")
     .subscribe(onNext: { string in
@@ -26,7 +26,7 @@ testMethod(NetworkError.notReachable)
 ```
 ### catchError
 Может обработать ошибку и вернуть `Observable` с тем же типом или бросить ее дальше
-```
+```swift
 testMethod(NetworkError.notReachable)
     .catchError { error in
         if case NetworkError.notReachable = error {
