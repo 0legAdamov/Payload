@@ -2,6 +2,7 @@
 * [catchErrorJustReturn](#catcherrorjustreturn)
 * [catchError](#catcherror)
 * [retry](#retry)
+* [retryWhen](#retrywhen)
 ---
 Тестовая функция, возвращающая ошибку:
 ```swift
@@ -40,3 +41,27 @@ testMethod(NetworkError.notReachable)
 ```
 ### retry
 Два варианта `retry()` и `retry(maxAttemptCount: Int)`, где `maxAttemptCount` кол-во повторов
+### retryWhen
+```swift
+func testMethod2(_ wrappedError: Error) -> Observable<Int> {
+    return Observable.error(wrappedError)
+}
+        
+let maxAttempts = 3
+        
+let retryHandler: (Observable<Error>) -> Observable<Int> = { e in
+    return e.enumerated().flatMap { attempt, error -> Observable<Int> in
+        if attempt >= maxAttempts - 1 {
+            return Observable.error(error)
+        }
+        print("wait \(attempt + 1)...")
+        return Observable<Int>.timer(Double(attempt + 1), scheduler: MainScheduler.instance).take(1)
+    }
+}
+        
+testMethod2(NetworkError.notReachable)
+    .retryWhen(retryHandler)
+    .subscribe(onNext: { string in
+        print(string)
+    }).disposed(by: disposeBag)
+```
