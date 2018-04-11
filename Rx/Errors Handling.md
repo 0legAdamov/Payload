@@ -1,6 +1,7 @@
 ## Errors handling
 * [catchErrorJustReturn](#catcherrorjustreturn)
 * [catchError](#catcherror)
+* [retry](#retry)
 ---
 Тестовая функция, возвращающая ошибку:
 ```
@@ -37,3 +38,5 @@ testMethod(NetworkError.notReachable)
 		// no network
 	}).disposed(by: bag)
 ```
+### retry
+Два варианта `retry()` и `retry(maxAttemptCount: Int)`, где `maxAttemptCount` кол-во повторов
