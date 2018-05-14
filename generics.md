@@ -1,4 +1,4 @@
-### inheritance
+### overriding
 ```swift
 class ViewModel {
     var title = ""
@@ -56,6 +56,6 @@ class SomeClass: GenericProtocol {
 ```
 *extension*
 ```swift
-extension GenericProtocol where MyType == String {
+extension GenericProtocol where MyType == String, Self == SomeClass {
 }
 ```
