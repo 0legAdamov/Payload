@@ -3,10 +3,10 @@
 ```swift
 func observableString() -> Observable<String> {
 	return Observable.create { observable -> Disposable in
-    	observable.onNext("12")
+  		observable.onNext("12")
     	observable.onCompleted()
-        	return Disposables.create()
-		}
+        return Disposables.create()
+	}
 }
 ```
 ```swift
