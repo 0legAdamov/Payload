@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" maxSegmentDuration="PT0H0M5.085S" mediaPresentationDuration="PT0H0M10.091S" minBufferTime="PT1.500S" profiles="urn:mpeg:dash:profile:isoff-on-demand:2011" type="static">
+ <ProgramInformation moreInformationURL="none">
+  <Title>Produced_for_OV</Title>
+ </ProgramInformation>
+
+ <Period duration="PT0H0M10.091S">
+  <AdaptationSet group="1" lang="und" maxFrameRate="90000/3007" maxHeight="1920" maxWidth="1080" segmentAlignment="true" subsegmentAlignment="true" subsegmentStartsWithSAP="1">
+   <Representation bandwidth="95641" codecs="avc1.64000C" frameRate="30000/1001" height="256" id="1" mimeType="video/mp4" sar="1:1" startWithSAP="1" width="144">
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=4&amp;sig=LMMi2jPmZm0&amp;ct=11&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="856-923" indexRangeExact="true">
+      <Initialization range="0-855"/>
+    </SegmentBase>
+   </Representation>
+   <Representation bandwidth="745851" codecs="avc1.64001E" frameRate="30000/1001" height="640" id="3" mimeType="video/mp4" sar="1:1" startWithSAP="1" width="360">
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=1&amp;sig=VAerQapuVu8&amp;ct=11&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="858-925" indexRangeExact="true">
+      <Initialization range="0-857"/>
+    </SegmentBase>
+   </Representation>
+   <Representation bandwidth="3151447" codecs="avc1.4D4020" frameRate="30000/1001" height="1280" id="5" mimeType="video/mp4" sar="1:1" startWithSAP="1" width="720">
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=3&amp;sig=GlhN31_ihV4&amp;ct=11&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="866-933" indexRangeExact="true">
+      <Initialization range="0-865"/>
+    </SegmentBase>
+   </Representation>
+   <Representation bandwidth="7172437" codecs="avc1.4D4028" frameRate="30000/1001" height="1920" id="6" mimeType="video/mp4" sar="1:1" startWithSAP="1" width="1080">
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=5&amp;sig=FKl7V8LGmTM&amp;ct=11&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="867-934" indexRangeExact="true">
+      <Initialization range="0-866"/>
+    </SegmentBase>
+   </Representation>
+  <Representation bandwidth="333916" codecs="avc1.640015" frameRate="30000/1001" height="426" id="2" mimeType="video/mp4" sar="1:1" startWithSAP="1" width="240">
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=0&amp;sig=Qpv7G0h9cYg&amp;ct=11&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="857-924" indexRangeExact="true">
+      <Initialization range="0-856"/>
+    </SegmentBase>
+   </Representation><Representation bandwidth="1274944" codecs="avc1.4D401F" frameRate="30000/1001" height="852" id="4" mimeType="video/mp4" sar="1:1" startWithSAP="1" width="480">
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=2&amp;sig=r3G7jzayBQ4&amp;ct=11&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="866-933" indexRangeExact="true">
+      <Initialization range="0-865"/>
+    </SegmentBase>
+   </Representation></AdaptationSet>
+  
+  <AdaptationSet lang="und" segmentAlignment="true" subsegmentAlignment="true" subsegmentStartsWithSAP="1">
+   <Representation audioSamplingRate="44100" bandwidth="37171" codecs="mp4a.40.2" id="7" mimeType="audio/mp4" startWithSAP="1">
+    <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=4&amp;sig=LMMi2jPmZm0&amp;ct=12&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="818-873" indexRangeExact="true">
+      <Initialization range="0-817"/>
+    </SegmentBase>
+   </Representation>
+   <Representation audioSamplingRate="44100" bandwidth="53555" codecs="mp4a.40.2" id="8" mimeType="audio/mp4" startWithSAP="1">
+    <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=0&amp;sig=Qpv7G0h9cYg&amp;ct=12&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="818-873" indexRangeExact="true">
+      <Initialization range="0-817"/>
+    </SegmentBase>
+   </Representation>
+   <Representation audioSamplingRate="44100" bandwidth="69939" codecs="mp4a.40.2" id="9" mimeType="audio/mp4" startWithSAP="1">
+    <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=1&amp;sig=VAerQapuVu8&amp;ct=12&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="818-873" indexRangeExact="true">
+      <Initialization range="0-817"/>
+    </SegmentBase>
+   </Representation>
+   <Representation audioSamplingRate="44100" bandwidth="135476" codecs="mp4a.40.2" id="10" mimeType="audio/mp4" startWithSAP="1">
+    <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=2&amp;sig=r3G7jzayBQ4&amp;ct=12&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="818-873" indexRangeExact="true">
+      <Initialization range="0-817"/>
+    </SegmentBase>
+   </Representation>
+   <Representation audioSamplingRate="44100" bandwidth="266548" codecs="mp4a.40.2" id="11" mimeType="audio/mp4" startWithSAP="1">
+    <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+    <BaseURL>?expires=1606245422573&amp;srcIp=92.100.94.228&amp;srcAg=UNKNOWN_IOS&amp;ms=185.226.52.203&amp;type=3&amp;sig=GlhN31_ihV4&amp;ct=12&amp;urls=45.136.22.203&amp;clientType=15&amp;appId=512000384397&amp;id=1027123251922</BaseURL>
+    <SegmentBase indexRange="818-873" indexRangeExact="true">
+      <Initialization range="0-817"/>
+    </SegmentBase>
+   </Representation>
+  </AdaptationSet>
+ </Period>
+</MPD>
